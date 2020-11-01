@@ -23,6 +23,7 @@ class user_manage:
         self.users.remove(token)
         with open("users.json", "w") as f:
             json.dump(self.users, f)
+        self.reload_user()
         print("{} 用户已被删除.".format(token))
 
     def reload_user(self):
